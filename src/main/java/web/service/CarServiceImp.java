@@ -14,7 +14,7 @@ public class CarServiceImp implements CarService {
     private List<Car> carList;
 
     public CarServiceImp() {
-        carList = new ArrayList<>();  // ← ИНИЦИАЛИЗАЦИЯ!
+        carList = new ArrayList<>();
         carList.add(new Car("BMW", "electric", 1234));
         carList.add(new Car("Lada Vesta", "gasoline", 1357));
         carList.add(new Car("Ford Focus", "electric", 5678));
