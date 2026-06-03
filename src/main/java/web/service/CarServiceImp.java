@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImp implements CarService {
-    private Car car;
     private List<Car> carList;
 
     public CarServiceImp() {

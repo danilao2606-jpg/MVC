@@ -1,8 +1,8 @@
 package web.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
@@ -20,11 +20,10 @@ public class CarController {
     }
 
     @GetMapping(value = "/cars")
-    public String showCar(@RequestParam(defaultValue = "5") int count, HttpServletRequest httpServletRequest) {
+    public String showCar(@RequestParam(defaultValue = "5") int count, Model model) {
         List <Car> cars = carService.getCarList(count);
-        httpServletRequest.setAttribute("cars", cars);
-        httpServletRequest.setAttribute("count", count);
+        model.addAttribute("cars", cars);
+        model.addAttribute("count", count);
         return "cars";
     }
-
 }
